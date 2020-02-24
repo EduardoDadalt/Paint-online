@@ -1,2 +1,2 @@
 # Paint-online
-I made a paint online with node.js, express and socket.io
+I made a paint online with Node.js, Express and Socket.io
