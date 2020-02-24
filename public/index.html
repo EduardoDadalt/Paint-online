@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Paint.io</title>
+    <style>
+      html,
+      body {
+        margin: 0;
+      }
+      canvas {
+        width: 10000px;
+        height: 10000px;
+        position: relative;
+        left: 5%;
+        image-rendering: optimizeQuality;
+        border: 0.1px solid black;
+      }
+      .fixed {
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        height: 100%;
+        width: 5%;
+        background-color: cornflowerblue;
+        padding-top: 5%;
+        border: 1px solid black;
+      }
+      .fixed > input[type="color"] {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0;
+        /* border: 0.1px solid black; */
+      }
+      .fixed > input[type="number"] {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0;
+      }
+      #brush {
+        background: url("img/brush.svg");
+        background-size: 100% 100%;
+        /* background-color: black; */
+        width: 2em;
+        height: 2em;
+        border: 1px solid black;
+      }
+      #eraser {
+        background: url("img/eraser.png");
+        background-size: 100% 100%;
+        /* background-color: black; */
+        width: 2em;
+        height: 2em;
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+
+  <body>
+    <canvas id="canvas" height="10000" width="10000"></canvas>
+    <div class="fixed">
+      <input type="color" id="cor" />
+      <input type="number" id="tam" max="30" min="1" value="5" />
+      <div id="brush" onclick="brush()"></div>
+      <div id="eraser" onclick="eraser()"></div>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="canvas.js"></script>
+  </body>
+</html>
